@@ -63,8 +63,19 @@
                             </div>
                             <div class="card-body" style="height: 70%;">
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="community" role="tabpanel">
-										
+									
+									<!-- 一般/管理員帳號密碼登入 -->
+                                    <div class="tab-pane active" id="PSAbot" role="tabpanel" aria-labelledby="PSAbot-tab">
+                                        <label for="inputUser" class="sr-only">User</label>
+                                        <input type="text" id="inputUser" placeholder="User " required autofocus>
+                                        <label for="inputPassword" class="sr-only">Password</label>
+                                        <input type="password" id="inputPassword" placeholder="Password" required>
+                                        <input type="button" id="PSAbot-login-btn" value="Sign in"
+                                            onclick="PSAbotLogin();">
+                                    </div>
+									
+									<!-- 第三方登入 -->
+                                    <div class="tab-pane" id="community" role="tabpanel">
                                         <!--Google Sign in button-->
 										<div id="gSignInWrapper">
                                             <button id="google-login-btn" class="customGPlusSignIn"
@@ -90,16 +101,6 @@
                                                 <span class="buttonText">以訪客身份登入</span>
                                             </button>
                                         </div>
-                                    </div>
-									
-									<!-- 一般/管理員帳號密碼登入 -->
-                                    <div class="tab-pane" id="PSAbot" role="tabpanel" aria-labelledby="PSAbot-tab">
-                                        <label for="inputUser" class="sr-only">User</label>
-                                        <input type="text" id="inputUser" placeholder="User " required autofocus>
-                                        <label for="inputPassword" class="sr-only">Password</label>
-                                        <input type="password" id="inputPassword" placeholder="Password" required>
-                                        <input type="button" id="PSAbot-login-btn" value="Sign in"
-                                            onclick="PSAbotLogin();">
                                     </div>
                                 </div>
                             </div>
