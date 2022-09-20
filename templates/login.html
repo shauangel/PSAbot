@@ -49,8 +49,12 @@
                                     <!-- login-card h3-->
                                     <ul class="nav nav-tabs card-header-tabs" id="bologna-list" role="tablist">
                                         <li class="nav-item">
+                                            <a class="nav-link active" href="#PSAbot" role="tab"
+                                                aria-controls="PSAbot" aria-selected="true">帳號/密碼</a>
+                                        </li>
+										<li class="nav-item">
                                             <a class="nav-link active" href="#community" role="tab"
-                                                aria-controls="community" aria-selected="true">社群</a>
+                                                aria-controls="community" aria-selected="true">第三方</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#manager" role="tab" aria-controls="manager"
@@ -64,7 +68,9 @@
                             <div class="card-body" style="height: 70%;">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="community" role="tabpanel">
-                                        <div id="gSignInWrapper">
+										
+                                        <!--Google Sign in button-->
+										<div id="gSignInWrapper">
                                             <button id="google-login-btn" class="customGPlusSignIn"
                                                 onclick="googleSignIn();">
                                                 <input type="image" src="../static/images/google.png"
@@ -72,6 +78,7 @@
                                                 <span class="buttonText">Sign in with Google</span>
                                             </button>
                                         </div>
+										
                                         <!--Facebook Sign in button-->
                                         <div class="facebook-login">
                                             <button type="button" id="facebook-login-btn" onclick="checkLoginState()">
@@ -88,13 +95,15 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="manager" role="tabpanel" aria-labelledby="manager-tab">
+									
+									<!-- 一般/管理員帳號密碼登入 -->
+                                    <div class="tab-pane" id="PSAbot" role="tabpanel" aria-labelledby="PSAbot-tab">
                                         <label for="inputUser" class="sr-only">User</label>
                                         <input type="text" id="inputUser" placeholder="User " required autofocus>
                                         <label for="inputPassword" class="sr-only">Password</label>
                                         <input type="password" id="inputPassword" placeholder="Password" required>
-                                        <input type="button" id="manager-login-btn" value="Sign in"
-                                            onclick="managerLogin();">
+                                        <input type="button" id="PSAbot-login-btn" value="Sign in"
+                                            onclick="PSAbotLogin();">
                                     </div>
                                 </div>
                             </div>

@@ -140,8 +140,8 @@ function userChanged(googleUser) {
 /* ================================================= */
 
 
-/* ================ Manager Sign in ================= */
-function managerLogin() {
+/* ================ Account/Pwd Sign in ================= */
+function PSAbotLogin() {
     var user = document.getElementById("inputUser").value;
     var password = document.getElementById("inputPassword").value;
     console.log('user :' + user + ' ,password: ' + password);
