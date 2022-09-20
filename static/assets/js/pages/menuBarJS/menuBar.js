@@ -1348,12 +1348,12 @@ function logOut() {
         }
     });
     localStorage.clear();
-    window.location.href = "https://soselab.asuscomm.com:55002/site/login";
+    window.location.href = page_head_url + "login";
 }
 
 function returnToLogin(){
     localStorage.clear();
-    window.location.href = "https://soselab.asuscomm.com:55002/site/login";
+    window.location.href = page_head_url + "login";
 }
 ////////////////// 登出 END ////////////////////
 
