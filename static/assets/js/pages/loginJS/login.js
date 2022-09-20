@@ -4,6 +4,26 @@ $('#bologna-list a').on('click', function (e) {
   $(this).tab('show')
 })
 /* ================================================= */
+
+
+/* ================ redirection ================= */
+function page_redirect(){
+	var myURL = page_head_url+"PSAbot";
+	$.ajax({
+        url: myURL,
+        type: "GET",
+        success: function(response){
+            console.log(response);
+        },
+        error: function(response){
+            console.log("error: ");
+            console.log(response);
+        }
+    });
+}
+/* ================================================= */
+
+
 /* ================ Facebook Login ================= */
 // 設定 Facebook JavaScript SDK
 var auth2;
@@ -79,6 +99,8 @@ function checkLoginState() {
 }
 
 /* ================================================= */
+
+
 /* ================ Google Sign in ================= */
 function onLoadGoogleCallback() {
   gapi.load('auth2', function () {
@@ -134,6 +156,8 @@ function userChanged(googleUser) {
   }
 }
 /* ================================================= */
+
+
 /* ================ Manager Sign in ================= */
 function managerLogin() {
     var user = document.getElementById("inputUser").value;
@@ -174,6 +198,7 @@ function managerLogin() {
 /* ================ 訪客 START ================= */
 function visitor(){
     //window.location.href = "http://soselab.asuscomm.com:5500/site/PSAbot";
-    window.location.href = page_head_url + "PSAbot";
+    //window.location.href = page_head_url + "PSAbot";
+	page_redirect();
 }
 /* ================ 訪客 END ================= */
