@@ -1,0 +1,66 @@
+{
+    "link": "",
+    "question": {
+        "id": "",
+        "title": "",
+        "content": "",
+        "abstract": "",
+        "score": {},
+        "vote": 0
+    },
+    "answers": [{
+        "_id": 41142073,
+        "content": "Flask has the flask-cors module.\nFollowing is the code snippet as well as the procedure. pip install -U flask-cors Add this lines in your flask application: See more by clicking on this link",
+        "vote": 0,
+        "score": 0.7298126557160475
+    }, {
+        "_id": 43019954,
+        "content": "After I tried others suggestions and answers. Here's what I use, which works. Steps: pip install flask flask-cors Copy and paste this in app.py file Code Note: be sure in your client's ajax configuration has the following: If one wonders, support_credentials=True just means it sends cookies along the payload back and forth.",
+        "vote": 0,
+        "score": 0.6972613361022606
+    }, {
+        "_id": 31253927,
+        "content": "Try deleting the virtualenv you created.  Then create a new virtualenv with: Then: Now let's activate the virtualenv Now you should see (flask) on the left of the command line. Edit: In windows there is no \"source\" that's a linux thing, instead execute the activate.bat file, here I do it using Powershell: PS C:\\DEV\\aProject> & .\\Flask\\Scripts\\activate)\n Let's install flask: Then create a file named hello.py (NOTE: see UPDATE Flask 1.0.2 below): and run it with: UPDATE Flask 1.0.2 With the new flask release there is no need to run the app from your script.  hello.py should look like this now: and run it with: Make sure to be inside the folder where hello.py is when running the latest command. All the steps before the creation of the hello.py apply for this case as well",
+        "vote": 0,
+        "score": 0.6820381042721324
+    }, {
+        "_id": 55272071,
+        "content": "Looks like your api/manage.py doesn't have a shebang ([Wikipedia]: Shebang (Unix)), so the default (current) command processor (a shell - typically bash) is attempting to run it, which (obviously) fails. To correct the problem, add a shebang (at the beginning of the file, making sure that your editor adds the Nix style line ending (\\n, 0x0A, LF)): Default Python installation: Variant (specify Python 3 explicitly): Custom Python installation: Note that you also need exec permissions on the file (chmod +x api/manage.py). Example: Another way would be to run the interpreter followed by the file name, but I don't know how to do it from Flask - actually that would require patching Werkzeug (_reloader.py: _get_args_for_reloading), but that would be just a lame workaround (gainarie) - see below. Looking at @AxelGrytt's answer, it turns out it's a known issue: [GitHub]: pallets/werkzeug - 0.15.0 causes OSError: [Errno 8] Exec format error: in Docker for Windows (hmm, submitted in the same day as this question (and 2 days after the release) :) ). So, what I have stated above is correct, but it is worth mentioning that there is another way of fixing it: removing the exec permission for the file: According to Werkzeug authors, from now on, this is desired behavior (also applies to v0.15.2):",
+        "vote": 0,
+        "score": 0.6648077230562432
+    }, {
+        "_id": 44690276,
+        "content": "I had a similar problem with flasgger. The reason for that was that I always use  sudo pip install flask  but for some reason that's not always the way to go.\nSometimes, you have to do just pip install flask Another gotcha is that sometimes people type pip install Flask with the cap F Posting this here in case somebody gets stuck.\nLet me know if it helped. Useful Link:\nWhat is the difference between pip install and sudo pip install?",
+        "vote": 0,
+        "score": 0.644017895192535
+    }, {
+        "_id": 52483594,
+        "content": "After activating the virtual environment and installing Flask, I created an app.py file. I run it like this : python -m flask run. Hope this will help! ",
+        "vote": 0,
+        "score": 0.616525332500025
+    }, {
+        "_id": 47114637,
+        "content": "For python 3 use pip3 install flask",
+        "vote": 0,
+        "score": 0.6055596649487882
+    }, {
+        "_id": 44299274,
+        "content": "The only way I could solve was by adding my users python dir to myapp.wsgi file. As an example: I guess that if you install the packages in the global enviroment, you should have no problem, but I had my python packages installed as user.",
+        "vote": 0,
+        "score": 0.58904467738966
+    }, {
+        "_id": 55807132,
+        "content": "If you disable debug mode (don't pass debug=True or set FLASK_DEBUG=0), the reloader will not be used and so this issue will not happen. The tradeoff is that you no longer have the reloader. It is preferrable to fix this by ensuring files marked as executable have an interpreter line, like #!/usr/bin/env python3 (from https://stackoverflow.com/a/55272071).",
+        "vote": 0,
+        "score": 0.5719267232704937
+    }, {
+        "_id": 55297531,
+        "content": "This is a new behavior in Werkzeug 0.15. Downgrading to Werkzeug 0.14.1 may work, but 0.14 is no longer supported, so you will be better off correcting the issue with your file as described in the other answers.",
+        "vote": 0,
+        "score": 0.5344601615779148
+    }],
+    "keywords": [],
+    "tags": [],
+    "time": "2021-08-05T15:28:06",
+    "view_count": 0
+}

@@ -1,0 +1,91 @@
+.lower_left_room{
+    position:absolute;
+    bottom: 10px;
+    right: 280px;
+    z-index: 100;
+}
+
+.chat{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.chatWindow{
+    position: fixed;
+    right: 50px;
+    bottom: 20px;
+}
+
+.msg_card_body{
+    overflow-y: auto;
+}
+
+.img_cont{
+    position: relative;
+    height: 70px;
+    width: 70px;
+}
+
+.img_cont_msg{
+    height: 40px;
+    width: 40px;
+}
+
+.type_message{
+    width: 100px;
+    height: 30px;
+    bottom: 0px;
+    position: fixed;
+}
+
+.msg_cotainer{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    border-radius: 25px;
+    background-color: #F5F5F5;
+    padding: 10px;
+    position: relative;
+}
+
+.msg_cotainer_send{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    border-radius: 25px;
+    background-color: #E6E6FA;
+    padding: 10px;
+    position: relative;
+}
+
+.msg_time{
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    color: rgba(255,255,255,0.5);
+    font-size: 10px;
+}
+.msg_time_send{
+    position: absolute;
+    right:0;
+    bottom: -15px;
+    color: rgba(255,255,255,0.5);
+    font-size: 10px;
+}
+
+.send_btn{
+    border-radius: 0 15px 15px 0 !important;
+    background-color: #5D478B;
+    border:0 !important;
+    color: white !important;
+    cursor: pointer;
+}
+
+/*聊天室自動換行*/
+.autoNewLine {
+-moz-hyphens:auto;
+-ms-hyphens:auto;
+-webkit-hyphens:auto;
+hyphens:auto;
+word-wrap:break-word;
+}

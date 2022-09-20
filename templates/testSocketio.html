@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test socketio</title>
+    <meta charset="utf-8">
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Bootstrap responsive meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <!-- test socket.io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Container-fluid starts -->
+    <div class="container" style="height: 100%;">
+        <div class="row">
+            <h1>Chat room test</h1>
+        </div>
+        <div class="row" id="user_info">
+        </div>
+        <hr>
+        <form class="row">
+            <div class="col-2 justify-content-center">
+                <input type="text" id="room_input" class="form-control" placeholder="Room number">
+            </div>
+            <div class="col-5 justify-content-center">
+                <input type="text" id="user_input" class="form-control" placeholder="請輸入訊息">
+            </div>
+            <div class="col-5 justify-content-center">
+                <input type="button" id="send_btn" value="Submit" onclick="send_message();">
+                <input type="button" id="change_btn" value="leave room" onclick="leave_room();">
+                <input type="button" id="join_btn" value="join room" onclick="join_room();">
+            </div>
+        </form>
+        <hr>
+        <div class="row">
+            <div class="col justify-content-center">
+                <ul class="list-group" id="messages">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="../static/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../static/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="../static/assets/js/bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="../static/assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- my js -->
+    <script type="text/javascript" src="../static/assets/js/chat.js"></script>
+</body>
+
+</html>

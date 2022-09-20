@@ -1,0 +1,184 @@
+.title{
+    color: #505458;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* FAQs頁面的CSS START */ 
+
+.addAnswerButton{
+    color: #5D478B;
+}
+
+.addAnswerButton:hover{
+    cursor: pointer;
+}
+
+.addFAQsInput{
+    margin-top: 3px;
+    width: 300px;
+}
+
+.addFAQsTextarea{
+    margin-top: 3px;
+    height: 150px;
+    width: 400px;
+}
+/* FAQs頁面的CSS END */
+
+.themeButton{
+    cursor: pointer;
+    outline: none;
+/*    padding: 8px 16px;*/
+    border: 1px solid #5D478B;
+    color: #5D478B;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.themeButton:hover{
+    outline: none;
+    color: white;
+    background-color: #5D478B;
+}
+
+.themeButton.active{
+    outline: none;
+}
+
+.grayButton{
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #DCDCDC;
+    color: #505458;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.grayButton:hover{
+    outline: none;
+    color: white;
+    background-color: #DCDCDC;
+}
+
+.grayButton.active{
+    outline: none;
+}
+
+.disabledButton, .disabledButton:hover, .disabledButton.active{
+    background-color: #DCDCDC !important;
+    color: #505458 !important;
+    border: 1px solid #ddd !important;
+    cursor: default !important;
+}
+
+.purpleLabel{
+/*    cursor: pointer;*/
+	background-color: #5D478B;
+	color: white;
+}
+
+.purpleLabel2{
+/*    cursor: pointer;*/
+    border: 1px solid #5D478B;
+	color: #5D478B;
+}
+
+a .purpleLabel {
+    cursor: pointer;
+}
+
+a .purpleLabel2 {
+    cursor: pointer;
+}
+
+button .purpleLabel {
+    cursor: pointer;
+}
+
+button .purpleLabel2 {
+    cursor: pointer;
+}
+
+.pagination {
+  display: inline-block;
+  float: right;
+}
+
+.pagination2 {
+  display: inline-block;
+  float: left;
+}
+
+.pagination a,.pagination2 a, .pagination button{
+    cursor: pointer;
+    color: #505458;
+    background-color: white;
+    outline: none;
+/*    float: left;*/
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+
+.pagination a:hover,.pagination2 a:hover, .pagination button:hover{
+  background-color: #5D478B;
+  color: white;
+  border: 1px solid #5D478B;
+  border-radius: 25px;
+}
+
+.pagination a.active,.pagination2 a.active, .pagination button.active{
+  background-color: #5D478B;
+  color: white;
+  border: 1px solid #5D478B;
+  border-radius: 25px;
+}
+
+.hideScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+.labelXBtn{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color:white;
+}
+
+.purpleBtn{
+    background-color: #5D478B; float: right; 
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+}
+
+.purpleBtnInChatroom{
+    background-color: #5D478B;
+    border-radius: 5px; 
+    width: 70px;
+    height: 35px;
+    display: inline-block;
+    margin: 3px;
+}
+
+
+.scoreBtn{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color:#5D478B;
+}
+
+.scoreBtn:hover{
+    color:skyblue;
+}

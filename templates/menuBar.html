@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PSABot</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="CodedThemes">
+    <meta name="keywords"
+        content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="CodedThemes">
+    <!-- Google Login meta tag-->
+    <meta name="google-signin-client_id"
+        content="417777300686-b6isl0oe0orcju7p5u0cpdeo07hja9qs.apps.googleusercontent.com">
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap.min.css">
+    <!-- font-awesome.css -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/font-awesome.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/icofont.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/pages/menuBarCSS/menuBar.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/pages/profileCSS/custom.css">
+    <!-- highlight START -->
+    <link rel="stylesheet" href="../static/assets/highlight/styles/color-brewer.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <!-- highlight END -->
+</head>
+
+<body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+
+                    <!-- PSABot START -->
+                    <div class="navbar-logo" style="background-color: #5D478B;">
+                        <!-- PSABot右邊展開縮起的按鈕 -->
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <a href="menuBar.html">
+                            <img class="img-fluid" style="height: 50px;" src="../static/images/icon.png"
+                                alt="PSAbotLogo">
+                            <span>PSABot</span>
+                        </a>
+                    </div>
+                    <!-- PSABot END -->
+
+                    <!-- 中間白色的 START -->
+                    <div class="navbar-container container-fluid">
+                        <!-- 全螢幕 -->
+                        <ul class="nav-left">
+                            <li>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a href="#!" onclick="javascript:toggleFullScreen()">
+                                    <i class="ti-fullscreen"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- 通知＆個人頭像 -->
+                        <ul class="nav-right">
+                            <li id="headerNotification" class="header-notification">
+                                <a href="#">
+                                    <i id="bell" class="ti-bell"></i>
+                                    <!--                                     新通知粉色的那個 -->
+                                    <span id="newNotification"></span>
+                                </a>
+                                <!-- 通知內容 START -->
+                                <ul class="show-notification" id="showNotification"
+                                    style="height: 506px; overflow: scroll;"></ul>
+                                <!-- 通知內容 END -->
+                            </li>
+                            <li class="user-profile header-notification">
+
+                                <div id="userProfileNav">
+                                    <!--                                    <img src="../static/images/jackson.png" class="img-radius" alt="User-Profile-Image">-->
+                                    <!--                                    <span id="userNameNav">易烊千璽</span>-->
+                                </div>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- 中間白色的 END -->
+
+                </div>
+            </nav>
+
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle">
+                            <a href="#">
+                                <i class="icon-close icons"></i>
+                            </a>
+                        </div>
+
+                        <div class="pcoded-inner-navbar main-menu" style="display: inline-block">
+                            <div id="main-menu-header">
+                                <div class="main-menu-header">
+                                    <div id="userHeadshotMenubar">
+                                    </div>
+
+                                    <div class="user-details">
+                                        <span id="userNameMenubar"></span>
+                                        <span id="userRoleMenubar"></span>
+                                    </div>
+
+                                    <button class="btn btn-outline"
+                                        style="width: 50px; background-color: white;  margin-left: 0px; margin-top: 25px;"
+                                        type="button" data-toggle="modal" data-target="#exampleModal">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #5D478B;"></i>
+                                        <!--                                            <span data-i18n="nav.dash.main" style="color: white; font-size: 10px; margin-right: 10px;">編輯</span>-->
+                                    </button>
+                                    <!--                                    <i class="fa fa-pencil-square-o editBtn" aria-hidden="true" type="button" data-toggle="modal" data-target="#exampleModal"></i>-->
+
+                                </div>
+                            </div>
+
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">頁面</div>
+                            <ul class="pcoded-item pcoded-left-item" id="leftMenuBarPages">
+
+                            </ul>
+
+                        </div>
+                    </nav>
+
+
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+
+                                    <div class="row" style="height: 600px;">
+                                        <div class="col-9" id="main_page">
+
+                                            <!--
+                                            把你的CODE放這～
+                                            -->
+
+                                            <!--                                            <iframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 frameborder=0 scrolling=auto src="summary_new.html"  height="100%" width="100%"></iframe>-->
+
+                                        </div>
+
+                                        <!-- 聊天室列表 START -->
+                                        <div id="chatList" class="col-3">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <!-- 測試START -->
+                                                    
+<!--
+                                                    <input type="button" onclick="createDiscussRoom()" value="發起共同討論">
+                                                
+                                                    <input type="button" onclick="joinDiscussRoom()" value="接受共同討論">
+                                                    
+                                                    <input type="button" onclick="joinDiscussRoom()" value="斷開連線">
+-->
+<!--                                                    <input type="button" onclick="getChatroomList('')" value="刪光房間">-->
+                                                    <!-- 測試END -->
+                                                    
+                                                    
+                                                    
+                                                    <h5 class="card-header-text">聊天室列表</h5>
+                                                </div>
+                                                <div class="card-block accordion-block" id="chatingList">
+                                                    <h3 class="card-title accordion-title" onclick="openChatroom('PSAbot', '')">
+                                                        <a class="accordion-msg" href="#">
+                                                            <img src="../static/images/iconSmall.png"
+                                                                class="chatImg">
+                                                            PSABot
+                                                        </a>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 聊天室列表 END -->
+
+                                        <!-- 聊天室視窗 START -->
+                                        <div class="card chatWindow" id="chatroom" style="width: 400px;">
+
+                                            <!-- 聊天室的header START -->
+                                            <div class="card-header" style="background-color: #5D478B; padding: 15px;">
+                                                <div id="chatroomTitle" style="color: white; font-size: 20px;">
+                                                    PSAbot
+                                                </div>
+                                                
+                                                <button type="button" class="btn btn-light btn-sm" style="float: right;" onclick="deleteChatLogConfirm()">刪除聊天記錄</button>
+
+                                            </div>
+                                            <!-- 聊天室的header END -->
+
+                                            <!-- 聊天室的body START -->
+                                            <div id="history_message"
+                                                class="card-block accordion-block card-body msg_card_body autoNewLine"
+                                                style="height: 300px;overflow-y: auto;overflow-x: hidden; padding: 15px;">
+                                                <!--
+                                                <div class="card-body msg_card_body overflow: auto;" id="history_message">
+                                                </div>
+-->
+                                            </div>
+                                            <!-- 聊天室的body END -->
+
+                                            <!-- 聊天室的footer START -->
+                                            <div class="card-footer" style="padding: 0;">
+                                                <div class="card-footer" class="type_message">
+                                                    <div class="input-group">
+                                                        <textarea name="" class="form-control type_msg"
+                                                            placeholder="輸入..." id="message"></textarea>
+
+                                                        <button class="input-group-text send_btn" id="sendButton"
+                                                            onclick="send_message()">
+                                                            <div class="input-group-append">
+                                                                <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                                            </div>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 聊天室的footer END -->
+
+                                        </div>
+                                        <!-- 聊天室視窗 END -->
+
+
+                                        <!-- 正在聊天的頭像 START -->
+                                        <div id="chatImage">
+                                            <img id="chatingImg" src="../static/images/iconSmall.png"
+                                                class="rounded-circle scaled_img chatIng"
+                                                style="background-color: #5D478B;" onclick="open_close()">
+                                        </div>
+                                        <!-- 正在聊天的頭像 END -->
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Main-body end -->
+
+    <!-- 編輯個人資訊 START-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">編輯個人資訊</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="userHeadshot" style="margin-top: 5px;">
+                        <!-- 編輯個人基本資料 START -->
+
+                        <div>
+                            <i class="fa fa-certificate" aria-hidden="true" style="color: #5D478B;"></i>
+                            <span style="font-size: 20px;">大頭貼</span>
+                        </div>
+                        <!-- 或者用class = "chatImg"(這個是圓形＋紫色框) -->
+                        <img id="headshot" class="img-100 img-radius" style="margin-left: 10px;" src="">
+                        <br><br>
+                        <input type="file" name="img" id="headshotBtn" accept="image/png">
+                        <!-- 編輯個人基本資料 END -->
+                    </div>
+                    <hr>
+                    <div style="margin-top: 15px;">
+                        <i class="fa fa-certificate" aria-hidden="true" style="color: #5D478B;"></i>
+                        <span style="font-size: 20px;">姓名</span>
+                    </div>
+                    <div>
+                        <input id="userName" type="text" name="fname" value="">
+                    </div>
+
+                    <!-- 興趣標籤 START -->
+                    <div style="margin-top: 15px;" id="interestingTags">
+                        <hr>
+                        <i class="fa fa-certificate" aria-hidden="true" style="color: #5D478B;"></i>
+                        <span style="font-size: 20px;">興趣標籤</span>
+                    </div>
+                    <div id="forwardPage">
+                    </div>
+                    <div id="chose_tag" style="margin-top: 5px;">
+                    </div>
+
+                    <div id="chosen_tag_in_modal" style="margin-top: 15px;">
+                    </div>
+                    <!-- 興趣標籤 END -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="save()" data-dismiss="modal">儲存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 編輯個人資訊 END-->
+    
+<!-- 沒輸入完整 START -->
+<div class="modal fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        啊你的姓名呢：）
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">好的</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 沒輸入完整 END -->
+    
+<!-- 共同討論選關鍵字 START -->
+<div class="modal fade" id="discussTags" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">選擇共同討論相關標籤</h5>
+            </div>
+            <div class="modal-body">
+                <div id="forwardPageDiscuss">
+                </div>
+                <div id="chose_tagDiscuss" style="margin-top: 5px;">
+                </div>
+                <div id="chosen_tag_in_modalDiscuss" style="margin-top: 15px;">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="discussChoseTags()" data-dismiss="modal">完成</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 共同討論選關鍵字 END -->
+    
+<!-- 加入共同討論 之 是否匿名 START -->
+<div class="modal fade" id="discussionIncognito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            參加共同討論時，是否要匿名？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="joinDiscussRoom('true')">是</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="joinDiscussRoom('false')">否</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 加入共同討論 之 是否匿名 END -->
+    
+<!-- 刪除聊天記錄確認 START -->
+<div class="modal fade" id="deleteChatLog" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            確定要刪除聊天記錄？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="removeChat()">是</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">否</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 刪除聊天記錄確認 END -->
+
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers
+        to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- Warning Section Starts -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers
+        to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="../static/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../static/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="../static/assets/js/bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="../static/assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="../static/assets/js/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="../static/assets/js/modernizr/css-scrollbars.js"></script>
+    <!-- classie js -->
+    <script type="text/javascript" src="../static/assets/js/classie/classie.js"></script>
+    <!-- Accordion js -->
+    <script type="text/javascript" src="../static/assets/js/pages/summaryJS/accordion.js"></script>
+    <!-- Facebook/Google login js-->
+    <!-- Google Cloud Platform JS -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Custom js -->
+    <script type="text/javascript" src="../static/assets/js/pages/summaryJS/script.js"></script>
+    <script src="../static/assets/js/pcoded.min.js"></script>
+    <script src="../static/assets/js/demo-12.js"></script>
+    <script src="../static/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/assets/js/pages/menuBarJS/menuBar.js"></script>
+    <script src="../static/assets/js/common.js"></script>
+    <!-- 共同討論 socket.io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+version: "2.0"
+
+nlu:
+- regex: class
+  examples: |
+   - .*class.*
+   - .*類.*
+- regex: method
+  examples: |
+   - .*method.*
+   - .*方法.*
+- regex: delegate
+  examples: |
+   - .*delegate.*
+   - .*委託.*
+- regex: self
+  examples: |
+   - .*self.*
+- regex: multidimensional_array
+  examples: |
+   - .*multidimensional array.*
+   - .*多維陣列.*
+- intent: question1
+  examples: |
+    - (class)[class]
+    - 類
+    - class
+    - 什麼是class？
+    - class是啥？
+    - 請解釋class是什麼。
+    - 什麼是類？
+    - 類是啥？
+    - 請解釋類是什麼。
+- intent: question2
+  examples: |
+    - (method)[method]
+    - 方法
+    - method
+    - 什麼是method？
+    - method是啥？
+    - 請解釋method是什麼。
+    - 什麼是方法？
+    - 方法是啥？
+    - 請解釋方法是什麼。
+- intent: question3
+  examples: |
+    - (self)[self]
+    - self
+- intent: question4
+  examples: |
+    - (delegate)[delegate]
+    - 委託
+    - delegate
+    - 什麼是delegate？
+    - delegate是啥？
+    - 請解釋delegate是什麼。
+    - 什麼是委託？
+    - 委託是啥？
+    - 請解釋委託是什麼。
+- intent: question5
+  examples: |
+    - (multidimensional_array)[multidimensional_array]
+    - 多維陣列
+    - multidimensional array
+    - 怎麼建多維陣列？
+    - 怎麼創多維陣列？
+    
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

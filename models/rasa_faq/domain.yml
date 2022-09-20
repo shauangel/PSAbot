@@ -1,0 +1,51 @@
+version: "2.0"
+
+intents:
+  - question1
+  - question2
+  - question3
+  - question4
+  - question5
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+responses:
+  utter_question1:
+  - text: "類是通過執行 class 語句創建的某種對象的類型。創建實例對象時，用 Class 對象作為模板，實例對象既包含了數據（屬性），又包含了數據類型特有的代碼（方法）。"
+  # "類是通過執行 class 語句創建的某種對象的類型。創建實例對象時，用 Class 對象作為模板，實例對象既包含了數據（屬性），又包含了數據類型特有的代碼（方法）。<br><br>類可以基於一個或多個其他類（稱之為基類）進行創建。基類的屬性和方法都得以繼承。這樣對象模型就可以通過繼承不斷地進行細化。比如通用的 Mailbox 類提供了郵箱的基本訪問方法.，它的子類 MboxMailbox、 MaildirMailbox、 OutlookMailbox 則能夠處理各種特定的郵箱格式。"
+  utter_question2:
+  - text: "方法是屬於對象的函數，對於對象 x ，通常以 x.name(arguments...) 的形式調用。方法以函數的形式給出定義，位於類的定義內：<br><pre><code class='python'>class C:<br>    def meth(self, arg):<br>        return arg * 2 + self.attribute</code></pre>"
+  utter_question3:
+  - text: "Self 只是方法的第一個參數的習慣性名稱。假定某個類中有個方法定義為 meth(self, a, b, c) ，則其實例 x 應以 x.meth(a, b, c) 的形式進行調用；而被調用的方法則應視其為做了 meth(x, a, b, c) 形式的調用。"
+  utter_question5:
+  - text: "多維數組或許會用以下方式建立：<br><br><pre><code class=‘python’>>>><br>>>> A = [[None] * 2] * 3 </code></pre><br>打印出來貌似沒錯：<br><pre><code class=‘python’>>>> A<br>[[None, None], [None, None], [None, None]]</code></pre><br>但如果給某一項賦值，結果會同時在多個位置體現出來：<br><pre><code class=‘python’>>>> A[0][0] = 5<br>>>> A<br>[[5, None], [5, None], [5, None]]<</code></pre>br>原因在於用 * 對列表執行重覆操作並不會創建副本，而只是創建現有對象的引用。 *3 創建的是包含 3 個引用的列表，每個引用指向的是同一個長度為 2 的列表。1 處改動會體現在所有地方，這一定不是應有的方案。<br><br>推薦做法是先創建一個所需長度的列表，然後將每個元素都填充為一個新建列表。<br><br><pre><code class=‘python’>A = [None] * 3<br>for i in range(3):<br>    A[i] = [None] * 2</code></pre><br>以上生成了一個包含 3 個列表的列表，每個子列表的長度為 2。也可以采用列表推導式：<br><br><pre><code class=‘python’>w, h = 2, 3<br>A = [[None] * w for i in range(h)]</code></pre><br>或者你還可以使用提供矩陣類型的擴展包；其中最著名的是 NumPy。"
+  utter_question4:
+  - text: "委托是一種面向對象的技術（也稱為設計模式）。假設對象 x 已經存在，現在想要改變其某個方法的行為。可以創建一個新類，其中提供了所需修改方法的新實現，而將所有其他方法都委托給 x 的對應方法。<br><br>Python 程序員可以輕松實現委托。比如以下實現了一個類似於文件的類，只是會把所有寫入的數據轉換為大寫：<br><br><pre><code class='python'>class UpperOut:<br><br>    def __init__(self, outfile):<br>        self._outfile = outfile<br><br>    def write(self, s):<br>      self._outfile.write(s.upper())<br><br>    def __getattr__(self, name):<br>        return getattr(self._outfile, name)</code></pre><br>這里 UpperOut 類重新定義了 write() 方法，在調用下層的 self._outfile.write() 方法之前，會將參數字符串轉換為大寫。其他所有方法則都被委托給下層的 self._outfile 對象。委托是通過 __getattr__ 方法完成的；請參閱 語言參考 了解有關控制屬性訪問的更多信息。<br><br>請注意，更常見情況下，委托可能會變得比較棘手。如果屬性既需要寫入又需要讀取，那麽類還必須定義 __setattr__() 方法，而這時就必須十分的小心。基礎的 __setattr__() 實現代碼大致如下：<br><br><pre><code class=‘python’>class X:<br>    ...<br>    def __setattr__(self, name, value):<br>        self.__dict__[name] = value<br>    ...</code></pre><br>大多數 __setattr__() 實現必須修改 self.__dict__ 來為自身保存局部狀態，而不至於引起無限遞歸。"
+  
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

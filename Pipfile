@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+gunicorn = "*"
+flask-cors = "*"
+requests = "*"
+flask-login = "*"
+pytz = "*"
+pymongo = {extras = ["srv"], version = "*"}
+rsa = "*"
+google-auth = "*"
+google-auth-httplib2 = "*"
+google-api-python-client = "*"
+sklearn = "*"
+spacy = "*"
+spacy-langdetect = "*"
+gensim = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

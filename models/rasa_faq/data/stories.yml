@@ -1,0 +1,52 @@
+version: "2.0"
+
+stories:
+
+- story: Q1
+  steps:
+  - intent: question1
+  - action: utter_question1
+- story: Q2
+  steps:
+  - intent: question2
+  - action: utter_question2
+- story: Q3
+  steps:
+  - intent: question3
+  - action: utter_question3
+- story: Q4
+  steps:
+  - intent: question4
+  - action: utter_question4
+- story: Q5
+  steps:
+  - intent: question5
+  - action: utter_question5
+  
+  
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye

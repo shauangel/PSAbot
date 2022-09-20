@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Post Question</title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="description" content="CodedThemes">
+    <meta name="keywords"
+    content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="CodedThemes">
+    <!-- Google font--><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/icofont.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/pages/profileCSS/custom.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/font-awesome.css">
+    
+    <!-- 匿名的bootstrap START -->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <!-- 匿名的bootstrap END -->
+<!--
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap4-toggle.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap4-toggle.min.css">
+-->
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    
+    <!-- highlight START -->
+    <link rel="stylesheet" href="../static/assets/highlight/styles/color-brewer.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <!-- highlight END -->
+</head>
+
+<body style="background: white;">
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+                <div class="ring">
+                    <div class="frame"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--    <button onclick="click_tag('Ren&lsquo;Py', '1')">Ren'Py</button>-->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+            <div class="pcoded-wrapper">
+                <div class="pcoded-inner-content">
+                    <!-- Main-body start -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- Page body start -->
+                            <div class="page-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <!-- Basic Form Inputs card start -->
+                                        <div class="card">
+                                            <div class="card-block">
+                                                <div class="title">發布貼文</div>
+                                                <br><br>
+                                                <form>
+                                                    <!-- 貼文標題 row start -->
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">貼文標題</label>
+                                                        <div class="col-sm-10">
+                                                            <input id="postTitle" type="text" class="form-control"
+                                                            placeholder="輸入貼文標題">
+                                                        </div>
+                                                    </div>
+                                                    <!-- 貼文標題 row end -->  
+                                                    <!-- 是否匿名 row start -->
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">是否匿名</label>
+                                                        <div class="col-sm-10">
+                                                            <input id="anonymous" type="checkbox"  data-toggle="toggle" data-size="xs" data-onstyle="secondary" data-width="60" data-height="35" data-on="yes" data-off="no">
+                                                        <!-- 是否匿名 row end --> 
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <!-- 選標籤 row start -->
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">相關標籤</label>
+                                                        <div class="col-sm-10">
+                                                            <div class="form-control" >  
+                                                                <!-- Button trigger modal -->
+                                                                <div data-toggle="tooltip" data-placement="top" data-original-title="點我選擇標籤">
+                                                                    <span type="button"  style="color: gray; width: 100%;" data-toggle="modal" data-target="#exampleModal">
+                                                                      選擇相關標籤
+                                                                    </span>
+                                                                </div>
+                                                            </div>                    
+                                                        </div>
+                                                    </div>
+                                                    <!-- 選標籤 row end -->
+                                                    <!-- 回覆內容 row start -->
+                                                    <div class="form-group row">
+                                                        <label class="col-sm-2 col-form-label">貼文內容</label>
+                                                        <div class="col-sm-10">
+                                                            <!-- 選擇程式碼語言 START -->
+                                                            <select name="codeLanguage">
+                                                                <option value="python" selected>python</option>
+                                                                <option value="html">HTML</option>
+                                                                <option value="css">CSS</option>
+                                                                <option value="javascript">Javascript</option>
+                                                                <option value="C">C</option>
+                                                            </select>
+                                                            <!-- 選擇程式碼語言 END -->
+                                                            
+                                                            <!-- 新增程式碼按鈕 START -->
+                                                            <div class="themeButton" style="display: inline-block; padding: 3px;" onclick="addCodeArea()">
+                                                            新增程式碼區塊
+                                                            </div>
+                                                            <!-- 新增程式碼按鈕 END -->
+                                                            
+                                                            <!-- 預覽按鈕 START -->
+                                                            <div class="themeButton" style="display: inline-block; padding: 3px;" onclick="showReplyContent('see')">預覽
+                                                            </div>
+                                                            <!-- 預覽按鈕 END -->
+                                                            
+                                                            <textarea id="replyContent" rows="15" cols="5" class="form-control"
+                                                        placeholder="輸入貼文內容"></textarea>
+                                                            
+                                                            <!-- 預覽區塊 START -->
+                                                            <div id="previewContent" style="border: 0.1mm solid; border-color: #545048;">
+                                                            <br>預覽區塊<br><br>
+                                                            </div>
+                                                            <!-- 預覽區塊 END -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- 回覆內容 row END -->
+                                                    <input class="btn btn-primary purpleBtn" value="發布" onclick="save()">
+                                                </form>
+                                                <!-- 已選 tag start -->
+                                                <div id="chosen_tag">
+<!--
+                                                    <label class="badge badge-default purpleLabel">python<button type="button" class="labelXBtn">x</button></label>
+-->
+                                                </div>
+                                                <!-- 已選 tag end -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Page body end -->
+                        </div>
+                    </div>
+                    <!-- Main-body end -->
+                    <div id="styleSelector"></div>
+                </div>                                            
+            </div>                                    
+        </div>
+<!-- 選標籤視窗 START-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"> 
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">選擇相關標籤</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>    
+      <div class="modal-body">     
+          <div id="chose_tag" style="margin-top: 5px;">
+          </div>    
+          <div id="chosen_tag_in_modal" style="margin-top: 15px;">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 選標籤視窗 END-->
+    
+    <!-- 沒輸入完整 START -->
+      <div class="modal fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="warningContent">
+<!--                內容不得為空！！！-->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">好的！</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- 沒輸入完整 END -->
+                                        <!-- Warning Section Starts -->
+                                        <!-- Older IE warning message -->
+<!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers
+        to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->
+<!-- Required Jquery -->
+<script type="text/javascript" src="../static/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/popper.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="../static/assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="../static/assets/js/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="../static/assets/js/modernizr/css-scrollbars.js"></script>
+<!-- classie js -->
+<script type="text/javascript" src="../static/assets/js/classie/classie.js"></script>
+<!-- Custom js -->
+<script type="text/javascript" src="../static/assets/js/script.js"></script>
+<script src="../static/assets/js/pcoded.min.js"></script>
+<script src="../static/assets/js/demo-12.js"></script>
+<script src="../static/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../static/assets/js/pages/postQuestionJS/postQuestion.js"></script>
+<script src="../static/assets/js/common.js"></script>
+<!--
+<script src="../static/assets/js/bootstrap4-toggle.js"></script>
+<script src="../static/assets/js/bootstrap4-toggle.min.js"></script>
+-->
+<!--<script src="../static/assets/js/bootstrap4-toggle.min.js.map"></script>-->
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    
+</body>
+
+</html>

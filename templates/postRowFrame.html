@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Posts </title>
+    <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <!-- Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="description" content="CodedThemes">
+      <meta name="keywords" content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+      <meta name="author" content="CodedThemes">
+      <!-- Google font-->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+      <!-- Required Fremwork -->
+      <link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap.min.css">
+      <!-- themify-icons line icon -->
+      <link rel="stylesheet" type="text/css" href="../static/assets/css/themify-icons.css">
+      <!-- ico font -->
+      <link rel="stylesheet" type="text/css" href="../static/assets/css/icofont.css">
+      <!-- Style.css -->
+      <link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">
+      <link rel="stylesheet" type="text/css" href="../static/assets/css/jquery.mCustomScrollbar.css">
+      <link rel="stylesheet" type="text/css" href="../static/assets/css/pages/profileCSS/custom.css">
+      <link rel="stylesheet" type="text/css" href="../static/assets/css/pages/postRowCSS/postRowCSS.css">
+      <link rel="stylesheet" type="text/css" href="../static/assets/css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="../static/assets/css/customBody.css">
+  </head>
+
+  <body style="background: white;">
+      <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+            </div>
+        </div>
+    </div>
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-wrapper">
+            <div class="pcoded-inner-content">
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <div class="page-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-header-left">
+                                                <div class="title">貼文列表</div>
+                                             </div>
+                                            
+                                            <!-- 搜尋貼文方式 START -->
+                                            <div style="float: right;">
+                                                <!--標籤-->
+                                                <i type="button" class="fa fa-tags scoreBtn" aria-hidden="true" onclick="showSearchTag()"></i>
+                                                <!--搜尋-->
+                                                <i type="button" class="fa fa-search scoreBtn" aria-hidden="true" onclick="showSearchBar()"></i>
+                                            </div>
+                                            <!-- 搜尋貼文方式 END -->
+                                            
+                                            <!-- 貼文排序 START -->
+                                            <div>
+                                            <i type="button" class="fa fa-filter fa-lg scoreBtn" aria-hidden="true" onclick="showPostSort()" style="margin-top: 20px; display: inline-block;"></i>
+                                            <span style="display: inline-block;" id="optionText">排序條件 | 依分數排序</span>
+                                            </div>
+                                            <!-- 貼文排序 END -->
+                                            
+                                            <!--已選標籤-->
+                                            <div id="chosen_tag"></div>
+                                            
+                                        </div>
+                                        <!-- 貼文列表 start -->
+                                        <div class="card-block">
+                                            <div class="row" id="post">
+                                            </div>
+                                        </div>
+                                        <!-- 貼文列表 end -->
+                                        
+                                        <!-- 翻頁 start-->
+                                        <div class="pagination" style="text-align: center;">
+                                            <button href="#" id="backwardPage" onclick="editPageNum('-1')">❮</button>
+                                            <button href="#" id="forwardPage" onclick="editPageNum('1')">❯</button>
+                                        </div>
+                                        <!-- 翻頁 end-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="styleSelector"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+<!-- 選擇tag START -->
+<div class="modal fade" id="aboutTag" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"> 
+        
+        <!-- 貼文排序方式 START -->
+        <div class="modal-header">
+            <h5 class="modal-title">選擇相關標籤</h5>
+        </div>    
+        <div class="modal-body">
+            <div style="padding-left: 32.22px; border-color: #505458;" id="searchTagContent">
+                    <div id="forwardPageInModal">
+                    </div>
+                    <div id="choseTagForSearch">
+                    </div>
+                    <div id="chosenTagInModalForSearch" style="margin-top: 5px;">
+                    </div>
+                </div>
+        </div>
+        <!-- 貼文排序方式 END -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="searchTag('new')" data-dismiss="modal">搜尋</button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- 選擇tag END -->
+      
+<!-- 貼文排序 START -->
+<div class="modal fade" id="aboutPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"> 
+        
+        <!-- 貼文排序方式 START -->
+        <div class="modal-header">
+            <h5 class="modal-title">貼文排序方式</h5>
+        </div>    
+        <div class="modal-body">
+            <div>
+                <input type="radio" name="sortType" id="sortScore" value="sortScore" checked>
+                <label class="form-check-label" for="sortScore">依分數排序</label>
+            </div>
+            <div>
+                <input type="radio" name="sortType" id="sortView" value="sortView">
+                <label class="form-check-label" for="sortView">依觀看次數排序</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" name="sortType" id="sortDate" value="sortDate">
+                <label class="form-check-label" for="sortDate">依日期排序</label>
+            </div>
+        </div>
+        <!-- 貼文排序方式 END -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="changePostSort()" data-dismiss="modal">排序</button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- 貼文排序 END -->
+      
+<!--搜尋匡 START -->
+<div class="modal fade" id="searchBar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 200px;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background-color:transparent; border: 0;"> 
+            <div class="modal-body" style="background-color:transparent;">   
+                <div style="text-align: center;">
+                    <input id="searchTextContent2" type="text" name="search" placeholder="輸入相關文字...">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--搜尋匡 END -->
+        <!-- Warning Section Starts -->
+        <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+<div class="ie-warning">
+    <h1>Warning!!</h1>
+    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+    <div class="iew-container">
+        <ul class="iew-download">
+            <li>
+                <a href="http://www.google.com/chrome/">
+                    <img src="assets/images/browser/chrome.png" alt="Chrome">
+                    <div>Chrome</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.mozilla.org/en-US/firefox/new/">
+                    <img src="assets/images/browser/firefox.png" alt="Firefox">
+                    <div>Firefox</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://www.opera.com">
+                    <img src="assets/images/browser/opera.png" alt="Opera">
+                    <div>Opera</div>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.apple.com/safari/">
+                    <img src="assets/images/browser/safari.png" alt="Safari">
+                    <div>Safari</div>
+                </a>
+            </li>
+            <li>
+                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                    <img src="assets/images/browser/ie.png" alt="">
+                    <div>IE (9 & above)</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p>Sorry for the inconvenience!</p>
+</div>
+<![endif]-->
+<!-- Warning Section Ends -->
+<!-- Required Jquery -->
+<script type="text/javascript" src="../static/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/popper.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/bootstrap.min.js"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="../static/assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="../static/assets/js/modernizr/modernizr.js"></script>
+<!-- am chart -->
+<script src="../static/assets/js/pages/profileJS/widget/amchart/amcharts.min.js"></script>
+<script src="../static/assets/js/pages/profileJS/widget/amchart/serial.min.js"></script>
+<!-- Todo js -->
+<script type="text/javascript " src="../static/assets/js/pages/profileJS/todo/todo.js "></script>
+<!-- Custom js -->
+<script type="text/javascript" src="../static/assets/js/pages/profileJS/dashboard/custom-dashboard.js"></script>
+<script type="text/javascript" src="../static/assets/js/script.js"></script>
+<!--<script type="text/javascript " src="../static/assets/js/SmoothScroll.js"></script>-->
+<script src="../static/assets/js/pcoded.min.js"></script>
+<script src="../static/assets/js/demo-12.js"></script>
+<script src="../static/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../static/assets/js/pages/postRowFrameJS/postRowFrame.js"></script>
+<script src="../static/assets/js/common.js"></script>
+</body>
+
+<!--
+<body class="disabled">
+  
+  <div class="popup">I'm the popup</div>
+  
+  I'm the body 1<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+  I'm the body<br />
+ 
+  
+  
+</body>
+-->
+</html>

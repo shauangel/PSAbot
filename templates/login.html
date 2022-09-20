@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>登入</title>
+    <meta charset="utf-8">
+    <!-- Google Login meta tag-->
+    <meta name="google-signin-client_id"
+        content="417777300686-b6isl0oe0orcju7p5u0cpdeo07hja9qs.apps.googleusercontent.com">
+    <!------------------------------------------------------------------------------------------------>
+    <!-- Bootstrap template -->
+    <!-- Bootstrap responsive meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <!-- Favicon icon -->
+    <!--<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">-->
+    <!-- Google font-->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/google-font.css">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap.min.css">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/icofont.css">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">
+    <!------------------------------------------------------------------------------------------------>
+    <!-- font-awesome.css -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/font-awesome.css">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/pages/loginCSS/login.css">
+    <!-- test socket.io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Container-fluid starts -->
+    <div class="container" style="height: 100%;">
+        <div class="row" style="">
+            <div class="col-sm-6" style="display: flex; align-items: center;">
+                <!-- Authentication card start -->
+                <div class="login-card card-block auth-body mr-auto ml-auto">
+                    <form class="md-float-material">
+                        <img src="../static/images/logo.png" class="rounded mx-auto d-block" width="50%" height="50%">
+                        <!-- card header -->
+                        <div class="auth-box text-center">
+                            <div class="row m-b-20">
+                                <div class="col-md-12">
+                                    <!-- login-card h3-->
+                                    <ul class="nav nav-tabs card-header-tabs" id="bologna-list" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#community" role="tab"
+                                                aria-controls="community" aria-selected="true">社群</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#manager" role="tab" aria-controls="manager"
+                                                aria-selected="false">管理員</a>
+                                        </li>
+                                    </ul>
+                                    <hr />
+                                    <h3 class="text-left txt-primary">登入</h3>
+                                </div>
+                            </div>
+                            <div class="card-body" style="height: 70%;">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="community" role="tabpanel">
+                                        <div id="gSignInWrapper">
+                                            <button id="google-login-btn" class="customGPlusSignIn"
+                                                onclick="googleSignIn();">
+                                                <input type="image" src="../static/images/google.png"
+                                                    style="width: 13%; float: left;" />
+                                                <span class="buttonText">Sign in with Google</span>
+                                            </button>
+                                        </div>
+                                        <!--Facebook Sign in button-->
+                                        <div class="facebook-login">
+                                            <button type="button" id="facebook-login-btn" onclick="checkLoginState()">
+                                                <i class="fa fa-facebook" aria-hidden="true" style="float: left;"></i>
+                                                <span class="buttonText">Sign in with Facebook</span>
+                                            </button>
+                                        </div>
+                                        
+                                        <!-- 以訪客身份登入 -->
+                                        <div>
+                                            <button type="button" onclick="visitor()" style="background: #5151A2; color: white; border-radius: 20px; cursor: pointer; outline: none;">
+                                                <i class="" aria-hidden="true" style="float: left;"></i>
+                                                <span class="buttonText">以訪客身份登入</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="manager" role="tabpanel" aria-labelledby="manager-tab">
+                                        <label for="inputUser" class="sr-only">User</label>
+                                        <input type="text" id="inputUser" placeholder="User " required autofocus>
+                                        <label for="inputPassword" class="sr-only">Password</label>
+                                        <input type="password" id="inputPassword" placeholder="Password" required>
+                                        <input type="button" id="manager-login-btn" value="Sign in"
+                                            onclick="managerLogin();">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <p class="text-inverse text-left m-b-0" style="color: gray;">困難問題交給我，大神的答案輕鬆有</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <!-- end of form -->
+                </div>
+                <!-- Authentication card end -->
+            </div>
+            <div class="col-sm-6" style="width: 50%; height: 40%;">
+                <img src="../static/images/computer.png">
+            </div>
+            <!-- end of col-sm-12 -->
+        </div>
+        <!-- end of row -->
+    </div>
+    <!-- end of container-fluid -->
+    <!--  </section>-->
+
+
+
+
+
+
+    <!-- Required Jquery -->
+    <script type="text/javascript" src="../static/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../static/assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="../static/assets/js/bootstrap.min.js"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="../static/assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="../static/assets/js/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="../static/assets/js/modernizr/css-scrollbars.js"></script>
+    <script type="text/javascript" src="../static/assets/js/common-pages.js"></script>
+    <!-- Facebook/Google login js-->
+    <!-- Google Cloud Platform JS -->
+    <script src="https://apis.google.com/js/platform.js?onload=onLoadGoogleCallback" async defer></script>
+    <!-- My script -->
+    <script src="../static/assets/js/pages/loginJS/login.js"></script>
+    <script src="../static/assets/js/common.js"></script>
+
+</body>
+
+</html>

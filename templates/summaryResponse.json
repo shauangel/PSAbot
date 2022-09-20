@@ -1,0 +1,30 @@
+{
+    "link": "https://stackoverflow.com/questions/44216049/how-to-run-a-python-flask-container-on-mac-os",
+    "question": {
+        "id": 44216049,
+        "title": "How to run a python-flask container on Mac OS?",
+        "content": "<p>I followed some online Docker tutorial and I wrote this <code>Dockerfile</code>:</p>\n<pre><code class=\"python\">FROM python:3.5-slim\n\nWORKDIR /opt\n\nCOPY requirements.txt /opt/requirements.txt\nRUN pip install -r /opt/requirements.txt\n\nCOPY hello.py /opt/hello.py\n\nEXPOSE 5000\n\nCMD [\"python\", \"/opt/hello.py\"]\n</code></pre>\n<p>I built my image with: <code>docker build -t ciasto/pythonflask:v1 .</code></p>\n<p>that resulted in:</p>\n<pre><code class=\"python\">$ docker build -t ciasto/pythonflask:v1 .\nSending build context to Docker daemon 4.096 kB\nStep 1/7 : FROM python:3.5-slim\n3.5-slim: Pulling from library/python\n10a267c67f42: Already exists \nf68a39a6a5e4: Pull complete \nfb30faeeb5d1: Pull complete \nb6ab8c11f85f: Pull complete \n69739f677b7a: Pull complete \nDigest: sha256:6cbef17164fc35bed1f43b8cb671c51f5622881008fd748eaf80c20e7bfc0079\nStatus: Downloaded newer image for python:3.5-slim\n ---&gt; b27a94c44674\nStep 2/7 : WORKDIR /opt\n ---&gt; a7724a7ac155\nRemoving intermediate container 356124f40ff1\nStep 3/7 : COPY requirements.txt /opt/requirements.txt\n ---&gt; 9fd790ec548d\nRemoving intermediate container 8ba92114cd28\nStep 4/7 : RUN pip install -r /opt/requirements.txt\n ---&gt; Running in d23ef61ca5fc\nCollecting Flask==0.10.1 (from -r /opt/requirements.txt (line 1))\n  Downloading Flask-0.10.1.tar.gz (544kB)\nCollecting Werkzeug&gt;=0.7 (from Flask==0.10.1-&gt;-r /opt/requirements.txt (line 1))\n  Downloading Werkzeug-0.12.2-py2.py3-none-any.whl (312kB)\nCollecting Jinja2&gt;=2.4 (from Flask==0.10.1-&gt;-r /opt/requirements.txt (line 1))\n  Downloading Jinja2-2.9.6-py2.py3-none-any.whl (340kB)\nCollecting itsdangerous&gt;=0.21 (from Flask==0.10.1-&gt;-r /opt/requirements.txt (line 1))\n  Downloading itsdangerous-0.24.tar.gz (46kB)\nCollecting MarkupSafe&gt;=0.23 (from Jinja2&gt;=2.4-&gt;Flask==0.10.1-&gt;-r /opt/requirements.txt (line 1))\n  Downloading MarkupSafe-1.0.tar.gz\nBuilding wheels for collected packages: Flask, itsdangerous, MarkupSafe\n  Running setup.py bdist_wheel for Flask: started\n  Running setup.py bdist_wheel for Flask: finished with status 'done'\n  Stored in directory: /root/.cache/pip/wheels/b6/09/65/5fcf16f74f334a215447c26769e291c41883862fe0dc7c1430\n  Running setup.py bdist_wheel for itsdangerous: started\n  Running setup.py bdist_wheel for itsdangerous: finished with status 'done'\n  Stored in directory: /root/.cache/pip/wheels/fc/a8/66/24d655233c757e178d45dea2de22a04c6d92766abfb741129a\n  Running setup.py bdist_wheel for MarkupSafe: started\n  Running setup.py bdist_wheel for MarkupSafe: finished with status 'done'\n  Stored in directory: /root/.cache/pip/wheels/88/a7/30/e39a54a87bcbe25308fa3ca64e8ddc75d9b3e5afa21ee32d57\nSuccessfully built Flask itsdangerous MarkupSafe\nInstalling collected packages: Werkzeug, MarkupSafe, Jinja2, itsdangerous, Flask\nSuccessfully installed Flask-0.10.1 Jinja2-2.9.6 MarkupSafe-1.0 Werkzeug-0.12.2 itsdangerous-0.24\n ---&gt; 775e776b6838\nRemoving intermediate container d23ef61ca5fc\nStep 5/7 : COPY hello.py /opt/hello.py\n ---&gt; 19591aa43188\nRemoving intermediate container 72a6ba817af0\nStep 6/7 : EXPOSE 5000\n ---&gt; Running in e40c405a1f23\n ---&gt; 3174d4ca3001\nRemoving intermediate container e40c405a1f23\nStep 7/7 : CMD python /opt/hello.py\n ---&gt; Running in 6da3612345ae\n ---&gt; 5504685771d5\nRemoving intermediate container 6da3612345ae\nSuccessfully built 5504685771d5\nmacHost:pythonflask$\n</code></pre>\n<p>When I do <code>docker ps -a</code> I get nothing. What did I do wrong? I am not even getting any error. I am on Mac OS Sierra. </p>\n<pre><code class=\"python\">$ docker -v\nDocker version 1.13.1, build 092cba3\n</code></pre>\n",
+        "abstract": "I followed some online Docker tutorial and I wrote this Dockerfile: I built my image with: docker build -t ciasto/pythonflask:v1 . that resulted in: When I do docker ps -a I get nothing. What did I do wrong? I am not even getting any error. I am on Mac OS Sierra. ",
+        "view_count": 519,
+        "web_score": 0,
+        "score": {
+            "user_id": "",
+            "user_vote": 0
+        },
+        "vote": 0
+    },
+    "answers": [{
+        "id": 44216192,
+        "score": {
+            "user_id": "",
+            "user_vote": 0
+        },
+        "content": "<p>To see the list of all built images with docker, run <code>docker images</code>. It should show the name of your image which you can then run with <code>docker run ciasto/pythonflask:v1</code>.</p>\n<p>More about <code>docker run</code> command on <a href=\"https://docs.docker.com/engine/reference/run/\" rel=\"nofollow noreferrer\">this link</a>.</p>\n",
+        "abstract": "To see the list of all built images with docker, run docker images. It should show the name of your image which you can then run with docker run ciasto/pythonflask:v1. More about docker run command on this link.",
+        "vote": 0
+    }],
+    "keywords": [],
+    "tags": [],
+    "time": "2021-08-04T08:09:54",
+    "view_count": 0
+}
