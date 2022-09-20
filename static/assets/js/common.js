@@ -1,4 +1,6 @@
 var head_url = "http://192.168.100.40:55001/api/";
+var page_head_url = "http://192.168.100.40:55001/site/";
+
 //var head_url = "https://soselab.asuscomm.com:55001/api/";
 //var head_url = "https://soselab.asuscomm.com:55002/api/";
 
