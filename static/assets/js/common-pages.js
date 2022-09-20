@@ -1,4 +1,4 @@
-var page_head_url = "http://0.0.0.0:55001/site/";
+var page_head_url = "http://192.168.100.40:55001/site/";
 
 
 "use strict";
