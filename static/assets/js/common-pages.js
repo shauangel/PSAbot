@@ -1,3 +1,6 @@
+var page_head_url = "http://0.0.0.0:55001/site/";
+
+
 "use strict";
 $(document).ready(function() {
     // $('.theme-loader').addClass('loaded');
