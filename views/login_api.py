@@ -2,38 +2,24 @@
 from flask import Blueprint, request, jsonify,session
 #from flask_security import logout_user, login_required
 from flask_login import login_user, current_user, logout_user
-# --- google sign-in --- #
-from google.oauth2 import id_token
-from google.auth.transport import requests
 
 # --- our models ---- #
 from models import user
-from models.PSAbotLoginManager import UserModel
+from models.PSAbotLoginManager import UserModel, SSOModel
 
+# --- set route --- #
 login_api = Blueprint("login_api", __name__)
-GOOGLE_OAUTH2_CLIENT_ID = '417777300686-b6isl0oe0orcju7p5u0cpdeo07hja9qs.apps.googleusercontent.com'
-
-@login_api.route('/test', methods=['GET'])
-def test():
-	return jsonify({"test" : "hi"})
 
 
+# --- google OAuth sign in api --- #
 @login_api.route('/google_sign_in', methods=['POST'])
 def google_sign_in():
     token = request.json['id_token']
-
-    try:
-        # Specify the GOOGLE_OAUTH2_CLIENT_ID of the app that accesses the backend:
-        id_info = id_token.verify_oauth2_token(
-            token,
-            requests.Request(),
-            GOOGLE_OAUTH2_CLIENT_ID
-        )
-        if id_info['iss'] not in ['accounts.google.com', 'https://accounts.google.com']:
-            raise jsonify({'error':'Wrong issuer.'})
-    except ValueError:
-        # Invalid token
-        return jsonify({'error':'Invalid token'})
+    
+    id_info = SSOModel.google_OAuth_login(token)
+    if id_info['error']:
+        return jsonify(id_info)
+    
     # 取得使用者資料，若使用者不存在就建立一份
     user_dict = user.query_user(id_info['sub'])
     if user_dict == None:
@@ -42,6 +28,7 @@ def google_sign_in():
             "role" : 'google_user',
             "name" : id_info['name'],
             "email" : id_info['email'],
+            "pwd": "",
             "skill" : [],
             "record" : {
                 "posts" : [],
@@ -54,6 +41,7 @@ def google_sign_in():
         user_dict.update({'first_login':True})
     else:
         user_dict.update({'first_login':False})
+
     # --- flask login --- #
     user_now = UserModel(user_dict['_id'])  
     login_user(user_now) 

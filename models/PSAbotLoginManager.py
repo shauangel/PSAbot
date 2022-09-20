@@ -3,13 +3,17 @@ from flask import session, redirect, url_for
 from flask_login import LoginManager,UserMixin
 from . import user
 
+# --- google sign-in --- #
+from google.oauth2 import id_token
+from google.auth.transport import requests
+
 ''' ------------------------------------------------------------
 step1. import
     from models.PSAbotLoginManager import roles_required,login_required
     
 step2. use decorater
     @login_required                                     # 使用者必須登入才可瀏覽，若未登入會導向登入畫面
-    @roles_required('facebook_user', 'google_user')     # 使用者必須屬於其中一種類別才可瀏覽，若不屬於會導向登入畫面
+    @roles_required('facebook_user', 'google_user', 'PSAbot_user')     # 使用者必須屬於其中一種類別才可瀏覽，若不屬於會導向登入畫面
 ------------------------------------------------------------ '''
 
     
@@ -34,6 +38,34 @@ class UserModel(UserMixin):
         return False
 # --------------- end ---------------
 
+# --------------- 第三方登入 ---------------
+class SSOModel():
+    def __init__(self):
+        self.__GOOGLE_OAUTH2_CLIENT_ID = '417777300686-b6isl0oe0orcju7p5u0cpdeo07hja9qs.apps.googleusercontent.com'
+    
+    def google_OAuth_login(self, token):
+        try:
+            # Specify the GOOGLE_OAUTH2_CLIENT_ID of the app that accesses the backend:
+            id_info = id_token.verify_oauth2_token(
+                token,
+                requests.Request(),
+                self.__GOOGLE_OAUTH2_CLIENT_ID
+            )
+            if id_info['iss'] not in ['accounts.google.com', 'https://accounts.google.com']:
+                return {'error':'Wrong issuer.'}
+        except ValueError:
+            # Invalid token
+            return {'error':'Invalid token'}
+        return id_info
+    
+    def facebook_sdk_login(self, token):
+        return 0
+
+
+
+# --------------- end ---------------
+
+# --------------- Auth Functions ---------------
 # 檢測使用者類別
 def roles_required(*roles):
     def wrapper(f):
@@ -53,3 +85,4 @@ def login_required(func):
             return redirect(url_for('login_web.login', _scheme="https", _external=True))
         return func(*args, **kwargs)
     return decorated_function
+# --------------- end ---------------

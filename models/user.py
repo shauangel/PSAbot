@@ -12,6 +12,7 @@ from datetime import datetime, timedelta
 
 # 新增 user
 def insert_user(user_dict):
+    
     rsatool = RsaTool()
     user_dict['name'] = rsatool.encrypt(user_dict['name'])
     user_dict['email'] = rsatool.encrypt(user_dict['email'])
