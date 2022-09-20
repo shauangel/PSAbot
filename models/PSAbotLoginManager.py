@@ -59,13 +59,14 @@ class SSOModel():
         return id_info
     
     def facebook_sdk_login(self, token):
+        ##代補
         return 0
 
 
 
 # --------------- end ---------------
 
-# --------------- Auth Functions ---------------
+# --------------- Flask Authentic Functions ---------------
 # 檢測使用者類別
 def roles_required(*roles):
     def wrapper(f):

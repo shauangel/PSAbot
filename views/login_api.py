@@ -60,6 +60,7 @@ def facebook_sign_in():
             "role" : 'facebook_user',
             "name" : data['name'],
             "email" : "",
+            "pwd" : "",
             "skill" : [],
             "record" : {
                 "posts" : [],
@@ -85,7 +86,8 @@ def password_sign_in():
     data = request.get_json()
     print(data)
     user_dict = user.query_user(data['_id'])
-    # 取得使用者資料，若使用者不存在就建立一份
+    
+    # 檢查是否有該筆資料
     if user_dict != None:
         if user_dict['password'] == data['password']:  
             # --- flask login --- #
