@@ -21,25 +21,25 @@ def PSAbot():
     return render_template("menuBar.html")
 
 @base_flow_web.route("/Profile")
-#@login_required
+@login_required
 @roles_required('facebook_user', 'google_user')
 def Profile():
     return render_template("profile.html")
     
 @base_flow_web.route("/profileFrame")
-#@login_required
+@login_required
 @roles_required('facebook_user', 'google_user')
 def profileFrame():
     return render_template("profileFrame.html")
     
 @base_flow_web.route("postQuestionFrame")
-#@login_required
+@login_required
 @roles_required('facebook_user', 'google_user', 'manager')
 def postQuestionFrame():
     return render_template("postQuestionFrame.html")
     
 @base_flow_web.route("/replyQuestionFrame")
-#@login_required
+@login_required
 @roles_required('facebook_user', 'google_user', 'manager')
 def replyQuestionFrame():
     return render_template("replyQuestionFrame.html")
@@ -66,31 +66,31 @@ def summaryFrame():
     
 #可以用相對路徑嗎？好像不行
 @base_flow_web.route("/skillTreeFrame")
-#@login_required
+@login_required
 @roles_required('facebook_user', 'google_user')
 def skillTreeFrame():
     return render_template("example.html")
 
 @base_flow_web.route("/editPostFrame")
-#@login_required
+@login_required
 @roles_required('facebook_user', 'google_user', 'manager')
 def editPostFrame():
     return render_template("editPostFrame.html")
     
 @base_flow_web.route("/editReplyFrame")
-#@login_required
+@login_required
 @roles_required('facebook_user', 'google_user', 'manager')
 def editReplyFrame():
     return render_template("editReplyFrame.html")
 
 @base_flow_web.route("/comprehensive")
-#@login_required
+@login_required
 @roles_required('facebook_user', 'google_user')
 def comprehensive():
     return render_template("comprehensive.html")
     
 @base_flow_web.route("/summary_new")
-#@login_required
+@login_required
 @roles_required('facebook_user', 'google_user')
 def summary_new():
     return render_template("summary_new.html")
@@ -100,7 +100,7 @@ def FaqFrame():
     return render_template("FaqFrame.html")
 
 @base_flow_web.route("/manageDataFrame")
-#@login_required
+@login_required
 @roles_required('manager')
 def manageDataFrame():
     return render_template("manageDataFrame.html")
