@@ -89,7 +89,7 @@ def password_sign_in():
     
     # 檢查是否有該筆資料
     if user_dict != None:
-        if user_dict['password'] == data['password']:  
+        if user_dict['pwd'] == data['pwd']:  
             # --- flask login --- #
             user_now = UserModel(user_dict['_id'])  
             login_user(user_now) 
