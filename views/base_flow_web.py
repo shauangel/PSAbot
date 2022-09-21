@@ -22,25 +22,25 @@ def PSAbot():
 
 @base_flow_web.route("/Profile")
 @login_required
-@roles_required('facebook_user', 'google_user')
+@roles_required('facebook_user', 'google_user', 'PSAbot_user')
 def Profile():
     return render_template("profile.html")
     
 @base_flow_web.route("/profileFrame")
 @login_required
-@roles_required('facebook_user', 'google_user')
+@roles_required('facebook_user', 'google_user', 'PSAbot_user')
 def profileFrame():
     return render_template("profileFrame.html")
     
 @base_flow_web.route("postQuestionFrame")
 @login_required
-@roles_required('facebook_user', 'google_user', 'manager')
+@roles_required('facebook_user', 'google_user', 'PSAbot_user', 'manager')
 def postQuestionFrame():
     return render_template("postQuestionFrame.html")
     
 @base_flow_web.route("/replyQuestionFrame")
 @login_required
-@roles_required('facebook_user', 'google_user', 'manager')
+@roles_required('facebook_user', 'google_user', 'PSAbot_user', 'manager')
 def replyQuestionFrame():
     return render_template("replyQuestionFrame.html")
     
@@ -67,31 +67,31 @@ def summaryFrame():
 #可以用相對路徑嗎？好像不行
 @base_flow_web.route("/skillTreeFrame")
 @login_required
-@roles_required('facebook_user', 'google_user')
+@roles_required('facebook_user', 'google_user', 'PSAbot_user')
 def skillTreeFrame():
     return render_template("example.html")
 
 @base_flow_web.route("/editPostFrame")
 @login_required
-@roles_required('facebook_user', 'google_user', 'manager')
+@roles_required('facebook_user', 'google_user', 'PSAbot_user', 'manager')
 def editPostFrame():
     return render_template("editPostFrame.html")
     
 @base_flow_web.route("/editReplyFrame")
 @login_required
-@roles_required('facebook_user', 'google_user', 'manager')
+@roles_required('facebook_user', 'google_user', 'PSAbot_user', 'manager')
 def editReplyFrame():
     return render_template("editReplyFrame.html")
 
 @base_flow_web.route("/comprehensive")
 @login_required
-@roles_required('facebook_user', 'google_user')
+@roles_required('facebook_user', 'google_user', 'PSAbot_user')
 def comprehensive():
     return render_template("comprehensive.html")
     
 @base_flow_web.route("/summary_new")
 @login_required
-@roles_required('facebook_user', 'google_user')
+@roles_required('facebook_user', 'google_user', 'PSAbot_user')
 def summary_new():
     return render_template("summary_new.html")
     
