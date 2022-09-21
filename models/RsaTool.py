@@ -1,5 +1,6 @@
 import rsa
 import os
+#import _db
 
 # key_path = "/Users/jacknahu/Documents/GitHub/PQAbot/models/"
 key_path = os.path.dirname(os.path.realpath(__file__))
@@ -15,7 +16,6 @@ def rsa_setup():
 
     
 class RsaTool(object):
-
     
     def __init__(self):
         with open(key_path + '/pub_key.pem','r') as file:
@@ -30,3 +30,16 @@ class RsaTool(object):
         return rsa.decrypt(data, self.privkey).decode('utf-8')
 
 
+#if __name__ == '__main__':
+#    db = _db.USER_COLLECTION
+#    rsatool = RsaTool()
+    
+    # --------------------------- #
+    
+    
+#    for i in db.find({}):
+#        print(i['email'])
+#        new_name = rsatool.decrypt(i['email'])
+#        print(new_name)
+        #db.update_one({'_id':i['_id']},{'$set':{'email': new_name}})
+        
