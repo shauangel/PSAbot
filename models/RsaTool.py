@@ -18,7 +18,7 @@ class RsaTool(object):
 
     
     def __init__(self):
-        print(os.path.abspath())
+        print(os.path.realpath(__file__))
         with open(key_path + 'pub_key.pem','r') as file:
             self.pubkey = rsa.PublicKey.load_pkcs1(file.read().encode('utf-8'))
         with open(key_path + 'priv_key.pem','r') as file:
