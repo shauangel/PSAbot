@@ -6,6 +6,7 @@ from views import register_blueprint
 from flask_cors import CORS
 
 #flask-login: sign in authentication
+from os import urandom
 from models.PSAbotLoginManager import PSAbotLoginManager,UserModel
 
 #middleware proxy fix: make nginx reverse proxy point to the app directly
@@ -22,6 +23,7 @@ app.jinja_env.auto_reload = True
 CORS(app)
 
 # --------- login --------- #
+app.config['SECRET_KEY'] = urandom(24).hex()
 login_manager = PSAbotLoginManager(app)
 @login_manager.user_loader
 def user_loader(user_id):  
