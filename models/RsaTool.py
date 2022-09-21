@@ -2,7 +2,7 @@ import rsa
 import os
 
 # key_path = "/Users/jacknahu/Documents/GitHub/PQAbot/models/"
-key_path = "/home/bach/PSAbot-vm/models/"
+key_path = os.path.dirname(os.path.realpath(__file__))
 
 def rsa_setup():
     publicKey, privateKey = rsa.newkeys(512)
@@ -18,7 +18,6 @@ class RsaTool(object):
 
     
     def __init__(self):
-        print(os.path.realpath(__file__))
         with open(key_path + 'pub_key.pem','r') as file:
             self.pubkey = rsa.PublicKey.load_pkcs1(file.read().encode('utf-8'))
         with open(key_path + 'priv_key.pem','r') as file:
