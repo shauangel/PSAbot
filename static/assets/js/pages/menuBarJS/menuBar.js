@@ -686,7 +686,7 @@ function start() {
         showIdentity();
         getUserHeadshotAndName();
         var role = localStorage.getItem("role");
-        if (role == "facebook_user" || role == "google_user") {
+        if (general_roles.includes(role)) {
             getUserInterestTags();
         }
         // ---------- 個人資料 END ---------- //
@@ -729,7 +729,7 @@ function setMenuBar() {
     var pageIcon = ["ti-home", "fa fa-user-o", "fa fa-file-text-o", "fa fa-eye", "fa fa-cogs", "ti-home", "fa fa-clipboard", "fa fa-cogs", "fa fa-wrench", "ti-home", "fa fa-eye", "fa fa-cogs"];
     var pageName = ["首頁", "個人頁面", "發布貼文", "瀏覽貼文", "瀏覽FAQ", "首頁", "管理內部貼文", "管理FAQ資料", "管理資料更新數據", "首頁", "瀏覽貼文", "瀏覽FAQ"];
 
-    if (role == "facebook_user" || role == "google_user") {
+    if (general_roles.includes(role)) {
         start = 0;
         end = 5;
     }
@@ -855,7 +855,7 @@ function open_close() {
 
 function showIdentity() {
     var role = localStorage.getItem("role");
-    if (role == "facebook_user" || role == "google_user") {
+    if (general_roles.includes(role)) {
         document.getElementById("userRoleMenubar").innerHTML = "一般使用者";
     }
     else if (role == "manager") {
@@ -2281,7 +2281,7 @@ function removeChat(){
 window.addEventListener("load", function () {
     start();
     var role = localStorage.getItem("role");
-    if (role == "facebook_user" || role == "google_user") {
+    if (general_roles.includes(role)) {
         setNotification();
         window.fbAsyncInit = function () {
             FB.init({
