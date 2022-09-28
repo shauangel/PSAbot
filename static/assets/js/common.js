@@ -1,7 +1,10 @@
-//var head_url = "http://192.168.100.40:55001/api/";
-//var page_head_url = "http://192.168.100.40:55001/site/";
-var head_url = "http://192.168.100.122:55001/api/";
-var page_head_url = "http://192.168.100.122:55001/site/";
+var head_url = "http://192.168.100.40:55001/api/";
+var page_head_url = "http://192.168.100.40:55001/site/";
+
+//本地測試用
+//var head_url = "http://192.168.255.6:55001/api/";
+//var page_head_url = "http://192.168.255.6:55001/site/";
+
 var general_roles = ["facebook_user", "google_user", "PSAbot_user"]
 
 //var head_url = "https://soselab.asuscomm.com:55001/api/";
