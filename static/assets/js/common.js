@@ -1,9 +1,15 @@
-var head_url = "http://192.168.100.40:55001/api/";
-var page_head_url = "http://192.168.100.40:55001/site/";
+//angel-vm
+//var head_url = "http://192.168.100.40:55001/api/";
+//var page_head_url = "http://192.168.100.40:55001/site/";
 
 //本地測試用
 //var head_url = "http://192.168.255.6:55001/api/";
 //var page_head_url = "http://192.168.255.6:55001/site/";
+
+//lab local
+var head_url = "http://192.168.100.154:55001/api/";
+var page_head_url = "http://192.168.100.154:55001/site/";
+
 
 var general_roles = ["facebook_user", "google_user", "PSAbot_user"]
 
