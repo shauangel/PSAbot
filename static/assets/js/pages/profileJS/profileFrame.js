@@ -279,6 +279,7 @@ function getAnswerRecord(which){
 /////////////////// 貼文＆回覆紀錄 END ///////////////////
 
 function start(){
+    console.log("profile in");
     getPostRecord("new");
     getAnswerRecord("new");
 }

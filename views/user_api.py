@@ -161,7 +161,7 @@ def save_user_img():
 #讀取照片
 def read_image():
     user_id=request.values.get('user_id')
-    
+    print(os.path.abspath(os.getcwd()))
     #define an image object with the location.
     #file = "/Users/linxiangling/Documents/GitHub/PQAbot/static/images/user_img/"+user_id+".png"
 #    file = "/Users/cihcih/Documents/GitHub/PQAbot/static/images/user_img/"+user_id+".png"
