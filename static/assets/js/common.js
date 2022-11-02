@@ -17,6 +17,7 @@ var general_roles = ["facebook_user", "google_user", "PSAbot_user"]
 //var head_url = "https://soselab.asuscomm.com:55002/api/";
 
 function setPage(page){
+    console.log(page);
     if(page!='comprehensive'){
         localStorage.removeItem("rankId");
     }
