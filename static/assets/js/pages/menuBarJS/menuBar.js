@@ -659,10 +659,10 @@ function start() {
     });
 
     // ---------- 同個頁面監聽localStorage START ---------- //
-    var orignalSetItem = localStorage.setItem;
+    var originalSetItem = localStorage.setItem;
 
     localStorage.setItem = function (key, newValue) {
-        orignalSetItem.apply(this, arguments);
+        originalSetItem.apply(this, arguments);
         var setItemEvent = new Event("setItemEvent");
         setItemEvent.newValue = newValue;
         window.dispatchEvent(setItemEvent);
@@ -671,6 +671,7 @@ function start() {
         changePage();
     });
     // ---------- 同個頁面監聽localStorage END ---------- //
+
 
     localStorage.setItem("page", "home");
 
